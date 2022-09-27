@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style> 
+    
+        .btn-firts {
+            width: 100%;
+        }
+    
+        #section-first {
+            width: 400px;
+        }
+    
+        .display-none {
+            display: none;
+        }
+    
+        .fs-9 {
+            font-size: 14px !important;
+        }
+    </style>
+    </head>
+
+<body>
+    <section class="container mb-3" id="section-first">
+        <h2 class="d-flex justify-content-center ">Search</h2>
+        <form class="form-horizontal" id="form" action="" novalidate>
+            <div class="float-end display-none" id="titleError"> </div>
+            <div class=" form-group mb-3" id="color">
+                <label for="titleId" class="form-label">Title:</label>
+                <input type="text" class="form-control" id="titleId">
+            </div>
+            <div class="form-group mb-3">
+                <div class="float-end display-none" id="typeError"></div>
+                <label for="typeId" class="form-label">Type:</label>
+                <select class="form-control" id="typeId" required>
+                    <option value="" selected="true" disabled="disabled">Choose type...</option>
+                    <option value="movie">Movie</option>
+                    <option value="series">Series</option>
+                    <option value="episode">Episode</option>
+                </select>
+            </div>
+            <div class="form-group mb-3">
+                <button type="submit" class="btn btn-primary btn-firts" id="search">Search</button>
+            </div>
+           
+
+        </form>
+        
+    </section>
+    <section id="sec_pag">
+        <nav aria-label="Page navigation example" id="pag" > <!--class="display-none"-->
+            <ul class="pagination  justify-content-center paginator">
+            </ul>
+        </nav>
+    </section>
+
+
+</body>
+<script src="hw.js"></script>
+
+</html>
