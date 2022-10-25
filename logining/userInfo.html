@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <style>
+        .display-none
+        {
+             display: none;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body class="">
+    <section class="container d-flex justify-content-center align-items-center m-5"> 
+        <form action="registration.html" id="secondForm">
+            <div>
+                <p class="text-end display-none" id="greetings"><a id="exit" onclick="deleteCookie()" href="registration.html">exit</a></p>
+            </div>
+            <hr>
+            <h4 class="text-center">User info</h4>
+            <div class="row mb-0">
+                <div class="col form-floating m-3 mb-0">
+                    <input type="text" class="form-control" id="inputFirstName" placeholder=" " style="height:90%;">
+                    <label class="text-secondary ps-4" for="inputFirstName">First name:</label>
+                </div>
+                <div class="col form-floating m-3 mb-0">
+                    <input type="text" class="form-control" id="inputLastName" placeholder=" " style="height:90%;">
+                    <label class="text-secondary ps-4" for="inputLastName">Last name:</label>
+                </div>
+            </div>
+            <div class="row mb-0">
+                <div class="col form-floating m-3 mb-0">
+                    <input type="text" class="form-control" id="inputBirthday" placeholder=" "  style="height:90%;">
+                    <label class="text-secondary ps-4" for="inputBirthday">Birthday:</label>
+                </div>
+                <div class="col  m-3 mb-0">
+                    <select class="form-select"  id="selectGender" style="height:90%;">
+                        <option  value="" selected="true" disabled="disabled">Choose gender...</option>
+                        <option  value="male">Male</option>
+                        <option  value="female">Female</option>
+                      </select>
+                </div>
+            </div>
+            <div class="row mb-0">
+                <div class="col form-floating m-3 mb-0">
+                    <input type="text" class="form-control" id="inputPhoneNumber" placeholder=" " style="height:90%;">
+                    <label class="text-secondary ps-4" for="inputPhoneNumber">Phone number:</label>
+                </div>
+                <div class="col form-floating m-3 mb-0">
+                    <input type="text" class="form-control" id="inputSkype" placeholder=" " style="height:90%;">
+                    <label class="text-secondary ps-4" for="inputSkype">Skype:</label>
+                </div>
+            </div>
+            <div class="d-grid gap-2">
+                <button  type="submit" class="btn bg-info bg-gradient bg-opacity-25 m-3">Save</button> 
+            </div>
+        </form>
+        </section>
+
+
+<script src="userInfo.js"></script>
+    
+</body>
+</html>
