@@ -1,0 +1,41 @@
+USE [luchesko]
+CREATE TABLE [dbo].[Documents](
+	[id] INT IDENTITY PRIMARY KEY,
+	[Path2File] [nvarchar](50) NOT NULL,
+	[FileName] [nvarchar](MAX) NOT NULL,
+	[DocType] [nvarchar](15) NULL,
+	[DocDate] [date] NULL,
+	[EmployeesID] [smallint] NULL,
+	[Region] [nvarchar](30) NULL,
+	[TelegramID] [bigint] NULL,
+	[other] [nvarchar](max) NULL,
+	[AddedAt] DATETIME2(0) NOT NULL DEFAULT GETDATE()
+)
+
+USE [luchesko]
+CREATE TABLE [dbo].[Employees](
+	[id] INT IDENTITY PRIMARY KEY,
+	[SecondName] [nvarchar](30) NOT NULL,
+	[FirstName] [nvarchar](15) NOT NULL,
+	[MiddleName] [nvarchar](15) NULL,
+	[Position] [nvarchar](35) NOT NULL,
+	[DocID] [smallint] NOT NULL,
+	[Region] [nvarchar](30) NOT NULL,
+	[TelegramID] [bigint] NULL,
+	[CreatedAt] DATETIME2(0) NOT NULL DEFAULT GETDATE()
+)
+
+USE [luchesko]
+CREATE TABLE [dbo].[Requests2Bot](
+	[id] INT IDENTITY PRIMARY KEY,
+	[ChatID] [bigint] NOT NULL,
+	[TelegramID] [bigint] NULL,
+	[is_bot] [bit] NULL,
+	[username] [nvarchar](max) NULL,
+	[first_name] [nvarchar](max) NULL,
+	[last_name] [nvarchar](max) NULL,
+	[content_type] [nvarchar](10) NOT NULL,
+	[user_message] [nvarchar](max) NULL,
+	[caption] [nvarchar](max) NULL,
+	[RequestedAt] DATETIME2(0) NOT NULL DEFAULT GETDATE()
+)

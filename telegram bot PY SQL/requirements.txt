@@ -1,0 +1,6 @@
+pyodbc
+pytesseract
+pyTelegramBotAPI
+opencv-python
+PIL
+fpdf
