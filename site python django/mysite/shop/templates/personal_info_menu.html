@@ -1,0 +1,8 @@
+{% extends "./base.html" %}
+{% block content %}
+<div class="list-group m-3 mt-5">
+    {% for menu in personal_list %}
+    <a class="list-group-item list-group-item-action p-4" href="{% url menu.1 %}">{{ menu.0|title }}</a>
+    {% endfor %}
+</div>
+{% endblock %}

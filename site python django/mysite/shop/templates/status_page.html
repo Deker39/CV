@@ -1,0 +1,29 @@
+{% extends "./base.html" %}
+{% block content %}
+<div class="bg-body-secondary p-4 my-5">
+    <div class="bg-dark-subtle p-3 m-2">
+        {% if title == 'sign out' %}
+        <h1>Exit</h1>
+        {% endif %}
+
+        {% if title == 'delete' %}
+        <h1>Delete account{{ user_del }}</h1>
+        {% endif %}
+
+        {% if title == 'successful' %}
+        <h1>Successful Page</h1>
+        {% for list in list_game_key %}
+            <h5>Game: {{ list.0 }}</h5>
+            <h5>key: {{ list.1 }}</h5>
+        {% endfor %}
+        {% endif %}
+
+        {% if title == 'successful change password' %}
+            <h1>Successful change password</h1>
+        {% endif %}
+    </div>
+</div>
+<script>
+    setTimeout(() => window.location.href = '/', 1000);
+</script>
+{% endblock %}

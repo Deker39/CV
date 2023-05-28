@@ -1,0 +1,58 @@
+{# TODO здесь об одном проукте #}
+{% extends "./base.html" %}
+{% block content %}
+    <h3 class="m-3">{{ cat_prduct }} > {{ product.title }}</h3>
+    <div class="bg-secondary-subtle">
+        <div>
+            <h2 class="p-2">{{ product.title }}</h2>
+        </div>
+        <div class="d-flex m-3">
+            <div class=" m-3">
+                <div class="d-flex justify-content-center">
+                    <img src="../media/{{ product.main_image }}" style="width: 250px" alt="{{ product.main_image }}">
+                </div>
+                <div class="d-flex justify-content-between ">
+                    {% for img in product_photo %}
+                        <img class="m-2" src="../media/{{ img.image }}" style="width: 150px" alt="{{ img.image }}">
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="bg-dark-subtle p-3">
+                <div class="d-flex justify-content-between">
+                    <p class="fs-3 fw-bold">{{ product.price }}$</p>
+                    {% if request.user.is_authenticated %}
+                        <form method="post" autocomplete="off">
+                            {% csrf_token %}
+                            <input type="hidden" name="product_id" id="product_id"  value="{{ product.id }}">
+                            <button type="submit" id="add-to-cart-btn" class="btn btn-primary">Buy</button>
+                        </form>
+
+                    {% endif %}
+                </div>
+                <p>Developer: {{ product.developer }}</p>
+                <p>Platform: {{ product.platform }}</p>
+                <p>Interface language:{{ product.language }}</p>
+                <p>Description: {{ product.description }}</p>
+                <h6>SYSTEM REQUIREMENTS:</h6>
+                <p>OS: {{ product_info.operating_system }}</p>
+                <p>Processor: {{ product_info.processor }}</p>
+                <p>RAM: {{ product_info.ram }}</p>
+                <p>Video card: {{ product_info.video_card }}</p>
+                <p>Disk space: {{ product_info.free_hard_disk_space }}</p>
+            </div>
+        </div>
+        <div class="d-flex flex-row justify-content-center mt-5">
+         {% for card in also_product_cat %}
+            <div class="card col-4 m-2 p-0 mx-5" style="width: 12rem;" >
+              <img src="../media/{{ card.main_image }}" class="card-img-top" alt="{{ main_image }}" id="card-{{ card.slug }}">
+              <div class="card-body">
+                <p class="card-title fs-5">{{ card.title }}</p>
+                <p class="card-text">{{ card.price }}$</p>
+              </div>
+            </div>
+
+
+        {% endfor %}
+        </div>
+    </div>
+{% endblock %}
