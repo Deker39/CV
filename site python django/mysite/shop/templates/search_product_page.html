@@ -5,7 +5,7 @@
         <hr class="border border-dark border-2 opacity-100">
          {% for card in product %}
             <div class="card col-4 m-2 p-0" style="width: 12rem;" >
-              <img src="../media/{{ card.main_image }}" class="card-img-top" alt="{{ main_image }}" id="cardd-{{ card.catalog }}/{{ card.slug }}">
+              <img src="../media/{{ card.main_image }}" class="card-img-top" alt="{{ main_image }}" id="search-{{ card.catalog }}/{{ card.slug }}">
                 <div class="card-body">
                 <p class="card-title fs-5">{{ card.title }}</p>
                 <p class="card-text">{{ card.price }}$</p>
@@ -14,9 +14,9 @@
         {% endfor %}
     </div>
    <script>
-     $('[id^="cardd-"]').click(function() {
+     $('[id^="search-"]').click(function() {
         let cardId = $(this).attr('id');
-        let link = cardId.slice(6).split('/')
+        let link = cardId.slice(7).split('/')
         let productUrl = "{% url 'product' cat_slug='PLACEHOLDER_CAT_SLUG' prod_slug='PLACEHOLDER_PROD_SLUG' %}";
         window.location.href = productUrl.replace('PLACEHOLDER_CAT_SLUG', link[0]).replace('PLACEHOLDER_PROD_SLUG', link[1])
          });

@@ -1,7 +1,6 @@
-{# TODO здесь об одном проукте #}
 {% extends "./base.html" %}
 {% block content %}
-    <h3 class="m-3">{{ cat_prduct }} > {{ product.title }}</h3>
+    <h3 class="m-3"><a href="{% url 'list catalog' cat_slug=cat_prduct %}">{{ cat_prduct }}</a> > {{ product.title }}</h3>
     <div class="bg-secondary-subtle">
         <div>
             <h2 class="p-2">{{ product.title }}</h2>
