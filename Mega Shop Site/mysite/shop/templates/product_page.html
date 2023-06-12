@@ -1,6 +1,6 @@
 {% extends "./base.html" %}
 {% block content %}
-    <h3 class="m-3"><a href="{% url 'list catalog' cat_slug=cat_prduct %}">{{ cat_prduct }}</a> > {{ product.title }}</h3>
+    <h3 class="m-3"><a href="{% url 'list catalog' cat_slug=cat_product %}">{{ cat_product }}</a> > {{ product.title }}</h3>
     <div class="bg-secondary-subtle">
         <div>
             <h2 class="p-2">{{ product.title }}</h2>
@@ -20,7 +20,7 @@
                 <div class="d-flex justify-content-between">
                     <p class="fs-3 fw-bold">{{ product.price }}$</p>
                     {% if request.user.is_authenticated %}
-                        <form method="post" autocomplete="off">
+                        <form method="post" autocomplete="off" name="buyForm">
                             {% csrf_token %}
                             <input type="hidden" name="product_id" id="product_id"  value="{{ product.id }}">
                             <button type="submit" id="add-to-cart-btn" class="btn btn-primary">Buy</button>
@@ -39,6 +39,42 @@
                 <p>Video card: {{ product_info.video_card }}</p>
                 <p>Disk space: {{ product_info.free_hard_disk_space }}</p>
             </div>
+        </div>
+        <div class="container mb-5">
+            <hr>
+             {% if comments %}
+                    <h5>Comments</h5>
+                    {% for comment in comments%}
+                        {% if comment.post_id == i.id %}
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    {% for author in authors %}
+                                        {% if comment.auth_id == author.id %}
+                                            <p class="fw-light m-0" style="font-size: 0.75rem">Author: {{ author.first_name }}</p>
+                                        {% endif %}
+                                    {% endfor %}
+                                    <p class="my-1">{{ comment.content }}</p>
+                                    <p class="m-0 fw-bold" style="font-size: 0.75rem">{{ comment.date }}</p>
+                                </div>
+                            </div>
+                     {% endif %}
+                    {% endfor %}
+                {% endif %}
+                {% if request.user.is_authenticated %}
+                       <hr>
+                       <div id="comment" class="">
+                           <form method="post" name="commentForm">
+                               {% csrf_token %}
+                               <div class="mb-3">
+                                   <label for="commentInput"  class="form-label">Make a comment</label>
+                                   <textarea class="form-control" rows="3" id="commentInput" name="commentInput" placeholder="comment..."></textarea>
+                               </div>
+                                <div class="mb-3">
+                                   <button type="submit" class="btn btn-dark" style="width: 100%">Save</button>
+                               </div>
+                           </form>
+                       </div>
+                {% endif %}
         </div>
         <div class="d-flex flex-row justify-content-center mt-5">
          {% for card in also_product_cat %}

@@ -77,6 +77,9 @@ class CommentProduct(Model):
     content = CharField(max_length=100)
     date = DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return f'{self.auth}, {self.product}'
+
 
 class Order(Model):
     user = ForeignKey(ShopUser, on_delete=CASCADE, related_name='user')
