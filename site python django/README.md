@@ -31,6 +31,15 @@ In this project I mastered:
 
 ## Table structure: 
 <p align="center">
-  <img src="" alt="Your Image">
+  <img src="https://github.com/Deker39/CV/assets/44725291/7487939a-3611-4461-be49-90404198124c" alt="Your Image">
 </p>
+
+## Video view
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=yNJucjowgL4">
+    <img src="https://img.youtube.com/vi/yNJucjowgL4/0.jpg" alt="Название видео">
+  </a>
+</p>
+
 
