@@ -15,16 +15,17 @@
 
 This project implemented a whole online store with the purchase of games with registration and user authorization. With additional functions: shopping cart and checkout, it is also possible to change the password for the user, delete the account, view the purchase history, change the user's personal data, and send the purchase product to the user's email.
 
-In this project I mastered:
-- Base Python
-- Work with django framework
-- Mysql
-- CSS3
-- Fraemwork Bootstrap5
-- Html
-- JS
+Used in this project::
+- Python
+- Django 
+- MYSQL
+- CSS
+- Bootstrap Framework
+- HTML
+- JavaScript
 - JQuery
-- Works with gmail service
+
+To store and manage data, a database structure was created based on the linked tables attached below.
 
 ## Table content:
 -  `shop_shopuser`
@@ -43,11 +44,17 @@ In this project I mastered:
   <img src="https://github.com/Deker39/CV/assets/44725291/7487939a-3611-4461-be49-90404198124c" alt="Your Image">
 </p>
 
+## To install you will need:
+
+1.Make a clone of the repository <>
+
+  
+  
 ## Video view
 
 https://github.com/Deker39/CV/assets/44725291/d217a220-b0b3-48cd-bc6c-e28b58f58e0f
 
-## To install you will need:
+
 
 
 
