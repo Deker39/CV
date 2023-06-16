@@ -1,9 +1,0 @@
-<div class="my-5">
-    <ul class="list-group list-group-flush">
-        {% for item in list_catalog %}
-        <li class="list-group-item ">
-            <a class="link-underline-light ms-3" href="{{ item.get_absolute_url }}">{{ item.title|title }}</a>
-        </li>
-        {% endfor %}
-    </ul>
-</div>
